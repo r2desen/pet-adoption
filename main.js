@@ -1,3 +1,6 @@
+const template = document.querySelector("#pet-card-template");
+const wrapper = document.creatDocumentFragment();
+
 async function start() {
   const weatherPromisse = await fetch(
     "https://api.weather.gov/gridpoints/MFL/110,50/forecast"
@@ -14,7 +17,10 @@ async function petsArea() {
     "https://learnwebcode.github.io/bootcamp-pet-data/pets.json"
   );
   const petsData = await petsPromise.json();
-  petsData.forEach((pet) => {});
+  petsData.forEach((pet) => {
+    const clone = template.content.cloneNode(true);
+    wrapper.appendChild(clone)
+  });
 }
 
 petsArea();
