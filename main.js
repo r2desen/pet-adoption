@@ -4,7 +4,7 @@ async function start() {
   );
   const weatherData = await weatherPromisse.json();
   const ourTemperature = weatherData.properties.periods[0].temperature;
-  document.querySelector("#temperature-outpur").textContent = ourTemperature;
+  document.querySelector("#temperature-output").textContent = ourTemperature;
 }
 
 start();
